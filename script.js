@@ -18,17 +18,17 @@ $(document).ready(function() {
             // need to look for the first item
             // in the image array
 
-            image[0].src = response.data[0].images.fixed_width_downsampled.url;
+            $("#results").empty();
 
-            $("#results").append(image);
+            
             console.log(response.data.length);
             for (var i = 0; i < response.data.length; i++) {
                 console.log(i);
                 var image2 = $('<img>');
-                image[0].src = response.data[0].images.fixed_width_downsampled.url;
-                image[0].src = response.data[1].images.fixed_width_downsampled.url;
+                image2[0].src = response.data[i].images.fixed_width_downsampled.url;
+                $("#results").append(image2);
             }
-            
+
         });
     });
 });
